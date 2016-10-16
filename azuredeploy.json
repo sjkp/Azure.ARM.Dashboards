@@ -1,0 +1,150 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": { 
+      "dashboardName": {
+          "type": "string",
+          "defaultValue":  "Simons dashboard"
+      }    
+  },
+  "variables": {
+   
+  },
+  "resources": [
+      {      
+      "name": "b2ce4e85-e3c4-401f-b9f3-aa52afdbf517",
+      "type": "Microsoft.Portal/dashboards",
+      "location": "centralus",
+      "apiVersion": "2015-08-01-preview",
+      "tags": {
+        "hidden-title": "[parameters('dashboardName')]"
+      },
+      "properties": {
+        "lenses": {
+          "0": {
+            "order": 0,
+            "parts": {
+              "0": {
+                "position": {
+                  "x": 6.0,
+                  "y": 0.0,
+                  "rowSpan": 4,
+                  "colSpan": 6
+                },
+                "metadata": {
+                  "inputs": [],
+                  "type": "Extension/HubsExtension/StartboardPartInstance/Browse",
+                  "viewState": {
+                    "content": {
+                      "selectableData": {
+                        "activatedItems": [],
+                        "selectedItems": []
+                      }
+                    }
+                  }
+                }
+              },
+              "1": {
+                "position": {
+                  "x": 12.0,
+                  "y": 1.0,
+                  "rowSpan": 1,
+                  "colSpan": 2
+                },
+                "metadata": {
+                  "inputs": [],
+                  "type": "Extension/HubsExtension/StartboardPartInstance/FeedbackTileStart"
+                }
+              },
+              "2": {
+                "position": {
+                  "x": 12.0,
+                  "y": 0.0,
+                  "rowSpan": 1,
+                  "colSpan": 2
+                },
+                "metadata": {
+                  "inputs": [],
+                  "type": "Extension/HubsExtension/StartboardPartInstance/WhatsNewTileStart"
+                }
+              },
+              "3": {
+                "position": {
+                  "x": 6.0,
+                  "y": 4.0,
+                  "rowSpan": 4,
+                  "colSpan": 6
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "subscriptionId",
+                      "value": "[subscription().subscriptionId]"
+                    }
+                  ],
+                  "type": "Extension/Microsoft_Azure_Billing/Blade/CreditSubscriptionDetailBlade/Lens/CostsLens/PartInstance/b_CreditSubscriptionDetailBlade_part3"
+                }
+              },
+              "4": {
+                "position": {
+                  "x": 12.0,
+                  "y": 2.0,
+                  "rowSpan": 1,
+                  "colSpan": 1
+                },
+                "metadata": {
+                  "inputs": [],
+                  "type": "Extension/HubsExtension/StartboardPartInstance/AzurePortalTileStart"
+                }
+              },
+              "5": {
+                "position": {
+                  "x": 0.0,
+                  "y": 4.0,
+                  "rowSpan": 4,
+                  "colSpan": 6
+                },
+                "metadata": {
+                  "inputs": [
+                    {
+                      "name": "subscriptionId",
+                      "value": "[subscription().subscriptionId]"
+                    }
+                  ],
+                  "type": "Extension/Microsoft_Azure_Billing/Blade/CreditSubscriptionDetailBlade/Lens/CostsLens/PartInstance/BurnRateCredit"
+                }
+              },
+              "6": {
+                "position": {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "rowSpan": 4,
+                  "colSpan": 6
+                },
+                "metadata": {
+                  "inputs": [],
+                  "type": "Extension/HubsExtension/StartboardPartInstance/ServicesHealthPartStart"
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "model": {
+            "timeRange": {
+              "value": {
+                "relative": {
+                  "duration": 1,
+                  "timeUnit": 3
+                }
+              },
+              "type": "MsPortalFx.Composition.Configuration.ValueTypes.TimeRange"
+            }
+          }
+        }
+      }
+    }      
+  ],
+  "outputs": {
+  }
+}
